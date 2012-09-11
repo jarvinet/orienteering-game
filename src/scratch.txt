@@ -1,0 +1,15 @@
+addTerrain
+addMap
+addCourse
+addEvent
+addOrienteer
+addRun
+
+removeTerrain
+removeMap
+removeCourse
+removeEvent
+removeOrienteer
+removeRun
+
+setSelected
