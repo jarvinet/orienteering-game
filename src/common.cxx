@@ -7,7 +7,7 @@
 #endif
 
 
-static char* DisplayErrorMessage(GLint err)
+static const char* DisplayErrorMessage(GLint err)
 {
     switch (err) 
     {

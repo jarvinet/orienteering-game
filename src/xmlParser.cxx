@@ -24,7 +24,7 @@ using batb::XmlParser;
 using batb::TokenType;
 
 
-char* tokenTypeToString(batb::TokenType type)
+const char* tokenTypeToString(batb::TokenType type)
 {
     switch (type) 
     {
@@ -176,7 +176,7 @@ TokenStream& TokenStream::operator>>(Token& token)
     return *this;
 }
 
-bool XmlParser::parse(TokenStream& input, TokenType type, char* xmlTag, Token& token) const
+bool XmlParser::parse(TokenStream& input, TokenType type, const char* xmlTag, Token& token) const
 {
     Token tok(TT_error, "");
     std::string errmsg;
@@ -214,7 +214,7 @@ bool XmlParser::parse(TokenStream& input, TokenType type, char* xmlTag, Token& t
     return false;
 }
 
-bool XmlParser::parse(TokenStream& input, char* xmlTag, std::string& s) const
+bool XmlParser::parse(TokenStream& input, const char* xmlTag, std::string& s) const
 {
     Token token(TT_error, "");
 
@@ -226,7 +226,7 @@ bool XmlParser::parse(TokenStream& input, char* xmlTag, std::string& s) const
     return false;
 }
 
-bool XmlParser::parse(TokenStream& input, char* xmlTag, fptype& f) const
+bool XmlParser::parse(TokenStream& input, const char* xmlTag, fptype& f) const
 {
     Token token(TT_error, "");
 
@@ -238,7 +238,7 @@ bool XmlParser::parse(TokenStream& input, char* xmlTag, fptype& f) const
     return false;
 }
 
-bool XmlParser::parse(TokenStream& input, char* xmlTag, int& i) const
+bool XmlParser::parse(TokenStream& input, const char* xmlTag, int& i) const
 {
     Token token(TT_error, "");
 
@@ -251,7 +251,7 @@ bool XmlParser::parse(TokenStream& input, char* xmlTag, int& i) const
 }
 
 #ifndef FREEBSD
-bool XmlParser::parse(TokenStream& input, char* xmlTag, time_t& t) const
+bool XmlParser::parse(TokenStream& input, const char* xmlTag, time_t& t) const
 {
     Token token(TT_error, "");
 
@@ -264,7 +264,7 @@ bool XmlParser::parse(TokenStream& input, char* xmlTag, time_t& t) const
 }
 #endif
 
-bool XmlParser::parse(TokenStream& input, char* xmlTag, bool& b) const
+bool XmlParser::parse(TokenStream& input, const char* xmlTag, bool& b) const
 {
     Token token(TT_error, "");
 
@@ -276,7 +276,7 @@ bool XmlParser::parse(TokenStream& input, char* xmlTag, bool& b) const
     return false;
 }
 
-bool XmlParser::parse(TokenStream& input, char* xmlTag, Run::RunStatus& r) const
+bool XmlParser::parse(TokenStream& input, const char* xmlTag, Run::RunStatus& r) const
 {
     Token token(TT_error, "");
 

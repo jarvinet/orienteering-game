@@ -34,7 +34,7 @@ struct Token
 
     ~Token() {}
 
-    bool match(TokenType type, char* value)
+    bool match(TokenType type, const char* value)
     {
 	return (this->type == type) && (this->value == value);
     }
@@ -83,16 +83,16 @@ class XmlParser
     void readRoute(Run* run) const;
 
  private:
-    bool parse(TokenStream& input, TokenType type, char* xmlTag, Token& token) const;
+    bool parse(TokenStream& input, TokenType type, const char* xmlTag, Token& token) const;
 
-    bool parse(TokenStream& input, char* xmlTag, std::string& s) const;
-    bool parse(TokenStream& input, char* xmlTag, fptype& f) const;
-    bool parse(TokenStream& input, char* xmlTag, int& i) const;
+    bool parse(TokenStream& input, const char* xmlTag, std::string& s) const;
+    bool parse(TokenStream& input, const char* xmlTag, fptype& f) const;
+    bool parse(TokenStream& input, const char* xmlTag, int& i) const;
 #ifndef FREEBSD
-    bool parse(TokenStream& input, char* xmlTag, time_t& t) const;
+    bool parse(TokenStream& input, const char* xmlTag, time_t& t) const;
 #endif
-    bool parse(TokenStream& input, char* xmlTag, bool& b) const;
-    bool parse(TokenStream& input, char* xmlTag, Run::RunStatus& r) const;
+    bool parse(TokenStream& input, const char* xmlTag, bool& b) const;
+    bool parse(TokenStream& input, const char* xmlTag, Run::RunStatus& r) const;
 
     bool parse(TokenStream& input, SplitTime*& st) const;
     bool parse(TokenStream& input, Terrain*& terrain) const;

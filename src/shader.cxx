@@ -54,7 +54,7 @@ GLuint VertexShaderObject = 0;
 GLuint FragmentShaderObject = 0;
 
 
-static int printOglError(char *file, int line)
+static int printOglError(const char *file, int line)
 {
     //
     // Returns 1 if an OpenGL error occurred, 0 otherwise.
@@ -152,7 +152,7 @@ static void printProgramInfoLog(GLuint program)
 }
 
 
-static int shaderSize(char *fileName, EShaderType shaderType)
+static int shaderSize(const char *fileName, EShaderType shaderType)
 {
     //
     // Returns the size in bytes of the shader fileName.
@@ -206,7 +206,7 @@ static int shaderSize(char *fileName, EShaderType shaderType)
 }
 
 
-static int readShader(char *fileName, EShaderType shaderType, char *shaderText, int size)
+static int readShader(const char *fileName, EShaderType shaderType, char *shaderText, int size)
 {
     //
     // Reads a shader from the supplied file and returns the shader in the
@@ -255,7 +255,7 @@ static int readShader(char *fileName, EShaderType shaderType, char *shaderText, 
     return count;
 }
 
-int readShaderSource(char *fileName, GLchar **vertexShader, GLchar **fragmentShader)
+int readShaderSource(const char *fileName, GLchar **vertexShader, GLchar **fragmentShader)
 {
     int vSize, fSize;
 
@@ -347,63 +347,63 @@ int installShaders(const GLchar *vertexShader, const GLchar *fragmentShader)
     return brickProg;
 }
 
-void setUniform1i(GLuint prog, char* name, int value)
+void setUniform1i(GLuint prog, const char* name, int value)
 {
     glUseProgram(prog);
     glUniform1i(getUniLoc(prog, name), value);
     glUseProgram(0);
 }
 
-void setUniform1iv(GLuint prog, char* name, int num, GLint* value)
+void setUniform1iv(GLuint prog, const char* name, int num, GLint* value)
 {
     glUseProgram(prog);
     glUniform1iv(getUniLoc(prog, name), num, value);
     glUseProgram(0);
 }
 
-void setUniform1f(GLuint prog, char* name, float value)
+void setUniform1f(GLuint prog, const char* name, float value)
 {
     glUseProgram(prog);
     glUniform1f(getUniLoc(prog, name), value);
     glUseProgram(0);
 }
 
-void setUniform1fv(GLuint prog, char* name, int num, GLfloat* value)
+void setUniform1fv(GLuint prog, const char* name, int num, GLfloat* value)
 {
     glUseProgram(prog);
     glUniform1fv(getUniLoc(prog, name), num, value);
     glUseProgram(0);
 }
 
-void setUniform2f(GLuint prog, char* name, GLfloat x, GLfloat y)
+void setUniform2f(GLuint prog, const char* name, GLfloat x, GLfloat y)
 {
     glUseProgram(prog);
     glUniform2f(getUniLoc(prog, name), x, y);
     glUseProgram(0);
 }
 
-void setUniform3f(GLuint prog, char* name, GLfloat x, GLfloat y, GLfloat z)
+void setUniform3f(GLuint prog, const char* name, GLfloat x, GLfloat y, GLfloat z)
 {
     glUseProgram(prog);
     glUniform3f(getUniLoc(prog, name), x, y, z);
     glUseProgram(0);
 }
 
-void setUniform3fv(GLuint prog, char* name, int num, GLfloat* value)
+void setUniform3fv(GLuint prog, const char* name, int num, GLfloat* value)
 {
     glUseProgram(prog);
     glUniform3fv(getUniLoc(prog, name), num, value);
     glUseProgram(0);
 }
 
-void setUniform4f(GLuint prog, char* name, GLfloat x, GLfloat y, GLfloat z, GLfloat w)
+void setUniform4f(GLuint prog, const char* name, GLfloat x, GLfloat y, GLfloat z, GLfloat w)
 {
     glUseProgram(prog);
     glUniform4f(getUniLoc(prog, name), x, y, z, w);
     glUseProgram(0);
 }
 
-void setUniformMatrix4fv(GLuint prog, char* name, int num, float* value)
+void setUniformMatrix4fv(GLuint prog, const char* name, int num, float* value)
 {
     glUseProgram(prog);
     glUniformMatrix4fv(getUniLoc(prog, name), num, GL_FALSE, value);

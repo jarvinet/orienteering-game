@@ -1,26 +1,6 @@
 Beat About The Bush
 ===================
 
-
-
-A Second Level Header
----------------------
-
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
-
-The quick brown fox jumped over the lazy
-dog's back.
-
-### Header 3
-
-> This is a blockquote.
-> 
-> This is the second paragraph in the blockquote.
->
-> ## This is an H2 in a blockquote
-
 Beat About The Bush is an orienteering simulation program or game, depending on the way you look at it.
 It runs on a variety of platforms, including Windows, Linux, FreeBSD and OS X. 
 
@@ -65,8 +45,10 @@ so that they only present you with the options that are relevent in your current
 by pressing the Esc key on the keyboard.
 
 Creating a new orienteer
+------------------------
 
 Creating new events
+-------------------
 When you hit the "Start singleplayer game" on the main menu, you are presented with a dialog with two panes.
 The left pane show a list of all events with one event selected (this is the current event). The right pane
 show a list of all runs performed in the selected event, sorted by the time it took to finish the course.
@@ -80,8 +62,10 @@ name to your event, and hit the "OK" button. You can also create new terrain, ma
 When creating a new terrain, you can set several parameters that control the generation of the terrain.
 
 singleplayer game
+-----------------
 
 multiplayer game
+----------------
 In multiplayer game you can play against other batb players over the internet. When playing with other players, 
 you can see them in the terrain view as they navigate through the terrain. In a multiplayer event all players
 start the course at the same time.
@@ -90,6 +74,8 @@ When setting up a multiplyer game, one player has to act as a server hosting the
 clients and they join the game. The clients need to know the hostname (or ip-address) and port number of the
 server hosting the game.
 
+Building
+--------
 The following libraries are needed to build on linux (ubuntu 11.10)
 libplib-dev
 freeglut3
