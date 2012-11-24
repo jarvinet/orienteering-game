@@ -77,7 +77,7 @@ server hosting the game.
 Building
 --------
 The following libraries are needed to build on linux (ubuntu 11.10)
-libplib-dev
-freeglut3
-mesa-common-dev
-libglew-dev
+* libplib-dev
+* freeglut3
+* mesa-common-dev
+* libglew-dev
